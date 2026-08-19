@@ -30,11 +30,13 @@ Die Energieflüsse werden über eine **Message Queue** koordiniert, von verschie
 - Sendet PRODUCER-Nachrichten an die Message Queue
 - Enthält: `kwh`, `datetime`, `type: PRODUCER`, `association: COMMUNITY`
 - Nutzt Wetterdaten zur Bestimmung der Produktionsmenge
+- Hauptzuständig: Niklas Sterling
 
-#### 2. Community Energy User
+#### 2. Community Energy User 
 - Sendet USER-Nachrichten an die Queue
 - Enthält: `kwh`, `datetime`, `type: USER`, `association: COMMUNITY`
 - Benötigt mehr Energie zu Spitzenzeiten (z. B. morgens, abends)
+- Hauptzuständig: Niklas Sterling
 
 #### 3. Usage Service
 - Verarbeitet PRODUCER/USER-Messages
@@ -43,6 +45,7 @@ Die Energieflüsse werden über eine **Message Queue** koordiniert, von verschie
   - community_used
   - grid_used
 - Aktualisiert `usage_hourly`-Tabelle
+- Hauptzuständig: Johannes Voraberger
 
 #### 4. Current Percentage Service
 - Reagiert auf Usage-Updates
@@ -50,19 +53,22 @@ Die Energieflüsse werden über eine **Message Queue** koordiniert, von verschie
   - `community_depleted` (%)
   - `grid_portion` (%)
 - Speichert Werte in `current_percentage`-Tabelle
+- Hauptzuständig: Philipp Labner
 
-#### 5. REST API (Spring Boot)
+#### 5. REST API (Spring Boot) 
 - Endpunkte:
   - `GET /energy/current` → Aktuelle Prozentwerte
   - `GET /energy/historical?start=...&end=...` → Daten für Zeitraum
 - Liest Daten aus der Datenbank
 - Wird von der GUI genutzt
+- Hauptzuständig: Johannes Voraberger
 
 #### 6. JavaFX GUI
 - Visualisiert Energieverteilung:
   - Aktueller Grid-/Community-Anteil
   - Historischer Verlauf (z.B. Charts, Tabellen)
 - Fragt die REST API ab
+- Hauptzuständig: Philipp Labner
 
 ### Team 
 Studentisches Entwicklerteam des FH Technikum Wiens, bestehend aus:
@@ -76,3 +82,6 @@ Das Projekt ist Abgeschlossen.
 
 ### Hinweise
 Dieses Projekt dient ausschließlich zu Lernzwecken im Rahmen der Lehrveranstaltung Distributed Systems SSe2025.
+
+### Repository-Historie
+Aufgrund des fehlenden Zugriffs auf den ursprünglichen GitHub-Account wurde das Projekt in ein neues Repository migriert. Die vollständige Git-Historie, einschließlich der ursprünglichen Commits und Branches, wurde dabei erhalten.
