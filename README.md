@@ -72,7 +72,7 @@ Studentisches Entwicklerteam des FH Technikum Wiens, bestehend aus:
 - Niklas Sterling
 
 ### Status
-Das Projekt befindet sich aktuell in der Entwicklungsphase.
+Das Projekt ist Abgeschlossen.
 
 ### Hinweise
 Dieses Projekt dient ausschließlich zu Lernzwecken im Rahmen der Lehrveranstaltung Distributed Systems SSe2025.
